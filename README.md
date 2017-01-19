@@ -2,7 +2,7 @@
 
 This project is to create a simple multi-user blog allowing users to signup, create, edit, delete thier posts, as well as like and comment.
 
-Live version: https://nj-multi-blog.appspot.com
+Live version: https://nj-multi-blog.appspot.com/blog
 
 ## Setting up the project
 
