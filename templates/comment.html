@@ -1,0 +1,7 @@
+<div class="comment">
+  {{ comment.getUserName() }}:
+  {{ comment.comment }}
+  <a href="/blog/comment/edit/{{comment.post_id}}/{{comment.key().id()}}">edit</a>
+  <a href="/blog/comment/delete/{{comment.post_id}}/{{comment.key().id()}}">delete</a>
+
+</div>

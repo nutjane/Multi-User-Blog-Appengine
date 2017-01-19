@@ -1,0 +1,170 @@
+body {
+    position: relative;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    background-color: #e5e8e8;
+
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    color: #333;
+}
+
+.login-area {
+    font-size: 13px;
+    color: gray;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.login-link {
+    color: gray;
+    text-decoration: none;
+}
+
+.edit-link {
+    text-align: right;
+    float: right;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+.edit-link a {
+  color: gray;
+  text-decoration: none;
+}
+
+.login-link:visited {
+    color: gray;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.error {
+    color: red;
+}
+
+label {
+  display: block;
+  font-size: 20px;
+}
+
+label + label {
+    margin-top: 20px;
+}
+
+input[type=text], input[type=password] {
+    width: 500px;
+    font-size: 20px;
+    padding: 2px;
+    font-family: monospace;
+}
+
+textarea {
+  width: 500px;
+  height: 400px;
+  font-size: 17px;
+  font-family: monospace;
+}
+
+input[type=submit] {
+  font-size: 24px;
+}
+
+.main-title {
+    display: block;
+    color: #283747;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+
+.post {
+  background-color: white;
+  padding: 15px;
+}
+
+.post-heading {
+    position: relative;
+    border-bottom: 3px solid #d6dBdF;
+}
+
+.post-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.post-date {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    color: #999;
+}
+
+.post-content {
+    margin-top: 5px;
+    padding-bottom: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: #2e4053;
+}
+
+.post-end {
+  margin-left: 15px;
+  margin-top: 10px;
+  font-size: 12px;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.post-like a {
+  font-weight: bold;;
+}
+
+.comment-form textarea {
+  width: 400px;
+  height: 70px;
+  font-size: 17px;
+  font-family: monospace;
+}
+
+.comment {
+  padding: 5px;
+  margin: 10px 0;
+  border-bottom: 2px solid #85929e;
+
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.comment-content {
+  margin: 10px 0 10px 15px;
+}
+
+.comment-editable {
+  text-align: right;
+  font-size: 13px;
+  color: gray;
+}
+
+.msg {
+  background-color: #5d6d7e;
+  color: white;
+  padding: 15px;
+}

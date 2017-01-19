@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  {% for p in posts %}
+
+    {{ p.render("post.html") | safe }}
+    <div class="post-end">
+      <div class="post-like">
+        {% if user and user.name == p.user%}
+            {% if p.liked | length == 0 %}
+              This post does't have any likes.
+            {% else %}
+              {{ p.liked | length }} people like your post.
+            {% endif %}
+          </div>
+          <div class="edit-link">
+            (<a href="/blog/edit/{{p.key().id()}}">edit your post</a>) - (<a href="/blog/delete/{{p.key().id()}}">delete</a>)
+          </div>
+        {% else %}
+
+            {% if p.liked.count(user.name) > 0 %}
+              <a href="/blog/like/{{p.key().id()}}">Unlike</a>
+            {% else %}
+              <a href="/blog/like/{{p.key().id()}}">Like</a>
+            {% endif %}
+
+            {% if p.liked | length == 0 %}
+              | Be the first who likes this post.
+            {% else %}
+              | {{ p.liked | length }} people like this post.
+            {% endif %}
+
+          </div>
+
+        {% endif %}
+      </div>
+
+  {% endfor %}
+
+{% endblock %}

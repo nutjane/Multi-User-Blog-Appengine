@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="/static/main.css" />
+
+  <title>NJ Blog</title>
+</head>
+
+<body>
+  <div>
+    <a href="/blog" class="main-title">
+      NJ Blog
+    </a>
+  </div>
+
+
+  <div class="login-area">
+    {% if user %}
+      Hi! {{user.name}} (<a class="login-link" href="/logout">logout</a>) | <a href="/blog/newpost" class="login-link">Create new post</a>
+    {% else %}
+      <a class="login-link" href="/login">login</a>
+      |
+      <a class="login-link" href="/signup">signup</a>
+    {% endif %}
+  </div>
+
+
+  {% if msg: %}
+    <div class="msg">
+      {{msg}}
+    </div>
+  {% endif %}
+
+
+  <div id="content">
+  {% block content %}
+  {% endblock %}
+  </div>
+</body>
+
+</html>

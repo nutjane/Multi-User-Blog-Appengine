@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {{post.render("post_one.html") | safe}}
+
+
+<div class="post-end">
+  <div class="post-like">
+    {% if user %}
+      {% if user.name == post.user%}
+        {% if post.liked | length == 0 %}
+          This post does't have any likes.
+        {% else %}
+          {{ post.liked | length }} people like this post.
+        {% endif %}
+      </div>
+      <div class="edit-link">
+        (<a href="/blog/edit/{{post.key().id()}}">edit your post</a>) - (<a href="/blog/delete/{{post.key().id()}}">delete</a>)
+      </div>
+      {% else %}
+        {% if post.liked.count(user.name) > 0 %}
+          <a href="/blog/like/{{post.key().id()}}">Unlike</a>
+        {% else %}
+          <a href="/blog/like/{{post.key().id()}}">Like</a>
+        {% endif %}
+
+        {% if post.liked | length == 0 %}
+          | Be the first who likes this post.
+        {% else %}
+          | {{ post.liked | length }} people like this post.
+        {% endif %}
+
+      </div>
+    {% endif %}
+  {% endif %}
+
+  </div>
+  <div class="comment-form">
+    <h2>New comment</h2>
+    <form method="post">
+      <label>
+        <div>Comment:</div>
+        <textarea name="comment" >{{comment}}</textarea>
+      </label>
+
+      <div class="error">{{error}}</div>
+
+      <input type="submit">
+    </form>
+  </div>
+
+
+  {% for comment in comments %}
+
+    <div class="comment">
+      <div>
+        <span class="bold">{{ comment.getUserName() }}</span> on {{comment.created.strftime("%b %d, %Y")}}
+      </div>
+      <div class="comment-content">
+        "{{ comment.comment }}"
+      </div>
+      {% if user and user.name == comment.getUserName() %}
+        <div class="comment-editable">
+          (<a href="/blog/comment/edit/{{comment.post_id}}/{{comment.key().id()}}">edit</a>) -
+          (<a href="/blog/comment/delete/{{comment.post_id}}/{{comment.key().id()}}">delete</a>)
+        </div>
+      {% endif %}
+
+
+    </div>
+
+  {% endfor %}
+
+
+{% endblock %}

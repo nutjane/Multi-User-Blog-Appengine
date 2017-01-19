@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="comment-form">
+  <h2>Edit Comment</h2>
+  <form method="post">
+    <label>
+      <div>Comment:</div>
+      <textarea name="comment" >{{comment.comment}}</textarea>
+    </label>
+
+    <div class="error">{{error}}</div>
+
+    <button onclick="goBack()">Go Back</button> <input type="submit">
+
+    <script>
+      function goBack() {
+          window.history.back();
+      }
+    </script>
+  </form>
+</div>
+{% endblock %}
